@@ -44,7 +44,6 @@ public class TextController : MonoBehaviour
 		if (!isChange) {
 			if (currentText == "----------!!!") {
 				isChange = true;
-				anim.SetBool("isChange",true);
 				StartCoroutine(ischangeCostume());
 				Debug.Log ("change");
 			}
@@ -69,6 +68,7 @@ public class TextController : MonoBehaviour
 	}
 
 	IEnumerator ischangeCostume(){
+		anim.SetBool("isChange",true);
 		yield return new WaitForSeconds (1.5f);
 		costume.sprite = changeCostume;
 	}
